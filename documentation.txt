@@ -1,0 +1,25 @@
+ERC721 Contract (MyERC721):
+
+The ERC721 contract extends the ERC721 standard and represents a non-fungible token (NFT) contract.
+It includes the ability to create ERC721 tokens using the createToken function, which mints a new token and assigns it to the specified recipient.
+The contract maintains a mapping _tokenToERC20 that associates each ERC721 token with a specific amount of ERC20 tokens.
+The associateERC20 function allows associating a given amount of ERC20 tokens with a particular ERC721 token.
+The getTokenERC20Amount function enables querying the associated ERC20 token amount for a specific ERC721 token.
+The contract overrides the transferFrom function to facilitate token transfers, allowing the transfer of ERC721 tokens between accounts. Additional logic can be added within this function to handle the transfer of associated ERC20 tokens.
+
+ERC20 Contract (MyERC20):
+
+The ERC20 contract extends the ERC20 standard and represents a fungible token contract.
+It includes the functionality to mint new ERC20 tokens using the mint function, allowing the contract owner to create and distribute tokens.
+The mint function allows specifying the recipient account and the amount of tokens to mint, which increases the recipient's token balance.
+The contract inherits and implements various standard ERC20 functions, such as transfer, transferFrom, and balanceOf, enabling token transfers between accounts and querying token balances.
+
+TokenIntegration Contract:
+
+The TokenIntegration contract serves as a helper contract that interacts with both the ERC721 and ERC20 contracts.
+It requires the addresses of the deployed ERC721 and ERC20 contracts to be provided during deployment.
+The contract's constructor initializes instances of the ERC721 and ERC20 contracts using the provided addresses.
+The createToken function creates a new ERC721 token, associates it with 1000 ERC20 tokens, and assigns it to the caller's account.
+The transferERC721 function allows transferring an ERC721 token from the caller's account to a specified recipient.
+The transferERC20 function facilitates the transfer of ERC20 tokens from the caller's account to a specified recipient.
+The integration of the ERC721 and ERC20 contracts allows establishing a mapping between ERC721 tokens and ERC20 tokens, ensuring that each ERC721 token is associated with 1000 ERC20 tokens. Users can create, transfer, and associate ERC721 tokens, as well as transfer associated ERC20 tokens between accounts.

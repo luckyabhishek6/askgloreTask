@@ -1,0 +1,35 @@
+Test Case: Creating and Transferring ERC721 Tokens
+
+Deploy ERC721 and ERC20 contracts.
+Create an ERC721 token using the createToken function and associate it with 1000 ERC20 tokens.
+Verify that the ERC721 token is created successfully and associated with the correct amount of ERC20 tokens.
+Transfer the ERC721 token to another account using the transferERC721 function.
+Verify that the token transfer is successful and ownership is updated.
+
+Test Case: Transferring ERC20 Tokens
+
+Deploy ERC721 and ERC20 contracts.
+Create an ERC721 token using the createToken function and associate it with 1000 ERC20 tokens.
+Transfer the associated ERC20 tokens to another account using the transferERC20 function.
+Verify that the ERC20 tokens are successfully transferred and the balances are updated accordingly.
+
+Test Case: Querying ERC20 Token Amount for an ERC721 Token
+
+Deploy ERC721 and ERC20 contracts.
+Create an ERC721 token using the createToken function and associate it with 1000 ERC20 tokens.
+Query the associated ERC20 token amount for the ERC721 token using the getTokenERC20Amount function.
+Verify that the returned ERC20 token amount matches the expected value.
+
+Test Case: Error Handling
+
+Deploy ERC721 and ERC20 contracts.
+Attempt to associate ERC20 tokens with a non-existing ERC721 token using the associateERC20 function.
+Verify that an appropriate error is thrown, preventing the association of tokens with non-existing tokens.
+
+Test Case: Minting and Distributing ERC20 Tokens
+
+Deploy ERC721 and ERC20 contracts.
+Create an ERC721 token using the createToken function.
+Mint a specific amount of ERC20 tokens using the mint function in the ERC20 contract.
+Distribute the minted ERC20 tokens to specific accounts using the transferERC20 function.
+Verify that the ERC20 tokens are successfully minted and distributed to the intended accounts.
